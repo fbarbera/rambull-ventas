@@ -4,10 +4,10 @@
       <li v-for="product in products" :key="product">
         <h3>{{ product.estilo }}</h3>
         <button class="addToCart" @click="updateCart(product.id)">
-          Agregar al carrito
-        </button>  
+          +
+        </button>
         <button class="addToCart" @click="removeFromCart(product.id)">
-          Quitar del carrito
+          -
         </button>
       </li>
     </ul>
@@ -39,11 +39,12 @@ export default {
 
 <style scoped>
 .addToCart {
- border: none;
- background-color: #39b982;
- color: whitesmoke;
- height: 40px;
- width: 100px;
- font-size: 14px;
- border-radius: 40px;}
+  border: none;
+  background-color: #39b982;
+  color: whitesmoke;
+  height: 40px;
+  width: 38px;
+  font-size: 34px;
+  border-radius: 40px;
+}
 </style>
