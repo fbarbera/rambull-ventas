@@ -3,7 +3,7 @@
     <img alt="Rambull logo" src="../../public/img/Birras.jpg" />
     <HelloWorld msg="Rambull Hard Brewing" />
     <ProducList @add-to-cart="updateCart" @remove-from-cart="removeFromCart" />
-    <p>Total compra {{ ProductoSeleccionado }}</p>
+    <p>Pedido {{ ProductoSeleccionado.length }}</p>
   </div>
 </template>
 

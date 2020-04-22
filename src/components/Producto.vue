@@ -2,12 +2,12 @@
   <div>
     <ul>
       <li v-for="product in products" :key="product">
-        <h3>{{ product.estilo }}</h3>
+        <h3>{{ product.estilo }} </h3>
         <button class="addToCart" @click="updateCart(product.id)">
-          Agregar al carrito
+          +
         </button>  
         <button class="addToCart" @click="removeFromCart(product.id)">
-          Quitar del carrito
+         -
         </button>
       </li>
     </ul>
@@ -19,10 +19,10 @@ export default {
   data() {
     return {
       products: [
-        { id: "1", estilo: "Rubia" },
-        { id: "2", estilo: "Roja" },
-        { id: "3", estilo: "Negra" },
-        { id: "4", estilo: "IPA" }
+        { id: "1", estilo: "Rubia", cantidad:0 },
+        { id: "2", estilo: "Roja", cantidad:0},
+        { id: "3", estilo: "Negra", cantidad:0 },
+        { id: "4", estilo: "IPA", cantidad:0 }
       ]
     };
   },
