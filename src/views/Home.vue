@@ -1,18 +1,39 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <img alt="Rambull logo" src="../../public/img/Birras.jpg" />
+    <HelloWorld msg="Rambull Hard Brewing" />
+    <ProducList @add-to-cart="updateCart" @remove-from-cart="removeFromCart" />
+    <p>Total compra {{ ProductoSeleccionado }}</p>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import ProducList from "@/components/Producto.vue";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      ProductoSeleccionado: []
+    };
+  },
+  methods: {
+    updateCart(id) {
+      this.ProductoSeleccionado.push(id);
+    },
+    removeFromCart(id) {
+      for (var i = this.ProductoSeleccionado.length - 1; i >= 0; i--) {
+        if (this.ProductoSeleccionado[i] === id) {
+          this.ProductoSeleccionado.splice(i, 1);
+        }
+      }
+    }
+  },
   components: {
-    HelloWorld
+    HelloWorld,
+    ProducList
   }
 };
 </script>
