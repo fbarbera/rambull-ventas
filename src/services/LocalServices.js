@@ -15,5 +15,8 @@ export default {
   },
   getProducto(id) {
     return apiClient.get("/productos/" + id);
+  },
+  postPedido(pedido) {
+    return apiClient.post("/ventas", pedido);
   }
 };

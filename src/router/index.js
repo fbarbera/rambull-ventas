@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+//import CrearPedidos from "../views/CrearPedidos.vue";
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   }
+  // {
+  //   path: "/",
+  //   name: "Pedidos",
+  //   component: VistaPedidos
+  // }
 ];
 
 const router = new VueRouter({

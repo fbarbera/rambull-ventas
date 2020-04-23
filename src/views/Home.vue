@@ -3,7 +3,9 @@
     <img alt="Rambull logo" src="../../public/img/Birras.jpg" />
     <HelloWorld msg="Rambull Hard Brewing" />
     <ProducList @add-to-cart="updateCart" @remove-from-cart="removeFromCart" />
-    <p>Pedido {{ ProductoSeleccionado.length }}</p>
+    <template v-if="ProductoSeleccionado.length > 0">
+      <router-link  to="/Pedidos">Hacer Pedido {{ ProductoSeleccionado.length }}</router-link>
+    </template>
   </div>
 </template>
 
