@@ -15,7 +15,7 @@ export default {
   methods: {
     updateCart() {
       this.producto++;
-      this.$emit('add-to-cart', this.producto.id);
+      this.$emit("add-to-cart", this.producto.id);
     }
   }
 };

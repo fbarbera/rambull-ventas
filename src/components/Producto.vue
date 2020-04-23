@@ -2,12 +2,12 @@
   <div>
     <ul>
       <li v-for="product in products" :key="product">
-        <h3>{{ product.estilo }} </h3>
+        <h3>{{ product.estilo }}</h3>
         <button class="addToCart" @click="updateCart(product.id)">
           +
-        </button>  
+        </button>
         <button class="addToCart" @click="removeFromCart(product.id)">
-         -
+          -
         </button>
       </li>
     </ul>
@@ -15,16 +15,19 @@
 </template>
 
 <script>
+import LocalServices from "@/services/LocalServices.js";
 export default {
   data() {
-    return {
-      products: [
-        { id: "1", estilo: "Rubia", cantidad:0 },
-        { id: "2", estilo: "Roja", cantidad:0},
-        { id: "3", estilo: "Negra", cantidad:0 },
-        { id: "4", estilo: "IPA", cantidad:0 }
-      ]
-    };
+    return { products: [] };
+  },
+  created() {
+    LocalServices.getProductos()
+      .then(response => {
+        this.products = response.data;
+      })
+      .catch(error => {
+        console.log("There was an error: ", error.response);
+      });
   },
   methods: {
     updateCart(id) {
@@ -39,11 +42,12 @@ export default {
 
 <style scoped>
 .addToCart {
- border: none;
- background-color: #39b982;
- color: whitesmoke;
- height: 40px;
- width: 100px;
- font-size: 14px;
- border-radius: 40px;}
+  border: none;
+  background-color: #39b982;
+  color: whitesmoke;
+  height: 40px;
+  width: 100px;
+  font-size: 14px;
+  border-radius: 40px;
+}
 </style>
