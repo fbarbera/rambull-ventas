@@ -3,12 +3,9 @@
     <ul>
       <li v-for="product in productos" :key="product.id">
         <h3>{{ product.estilo }}</h3>
-        <button class="addToCart" @click="updateCart(product.id)">
-          +
-        </button>
-        <button class="addToCart" @click="removeFromCart(product.id)">
-          -
-        </button>
+        <img src='../../public/img/suma.jpg' @click="updateCart(product.id)"/>
+        <img src='../../public/img/resta.jpg' @click="removeFromCart(product.id)"/>
+
       </li>
     </ul>
   </div>
@@ -35,12 +32,19 @@ export default {
 
 <style scoped>
 .addToCart {
-  border: none;
-  background-color: #39b982;
+background-color: #39b982;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
   color: whitesmoke;
-  height: 40px;
-  width: 38px;
-  font-size: 14px;
-  border-radius: 40px;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+img {
+    width: 8%;
 }
 </style>

@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 <template>
   <div class="home">
-    <img alt="Rambull logo" src="../../public/img/Birras.jpg" />
-    <h1>Rambull Hard Brewing</h1>
+    <!-- <h2>Rambull Hard Brewing</h2> -->
+    <img alt="Rambull logo" src="../../public/img/RambullHB.jpg" />
     <ProducList @add-to-cart="updateCart" @remove-from-cart="removeFromCart" />
     <template v-if="ProductoSeleccionado.length > 0">
       <router-link
-        :to="{name: 'Pedidos', params: { productos: ProductoSeleccionado } }"
+        :to="{ name: 'Pedidos', params: { productos: ProductoSeleccionado } }"
         >Hacer Pedido {{ ProductoSeleccionado.length }}</router-link
       >
     </template>
@@ -47,3 +47,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+img {
+    width: 100%;
+}
+</style>
