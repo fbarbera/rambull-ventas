@@ -158,7 +158,7 @@ button:-moz-focusring,
   outline: 2px solid #39b982;
 }
 label {
-  color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
   font-weight: 700;
 }
 input,
@@ -234,5 +234,14 @@ select:focus::ms-value {
 }
 select::ms-expand {
   opacity: 0;
+}
+.btnSubmit{
+  border: none;
+  background-color: #39b982;
+  color: whitesmoke;
+  height: 40px;
+  width: 38px;
+  font-size: 14px;
+  border-radius: 40px;
 }
 </style>

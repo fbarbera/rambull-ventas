@@ -1,31 +1,148 @@
 {
-    "productos": [
-        { "id": "1", "estilo": "Rubia", "IBU":0, "graduacion": "5", "disponible": true},
-        { "id": "2", "estilo": "Roja", "IBU":0 , "graduacion": "5", "disponible": true},
-        { "id": "3", "estilo": "Negra", "IBU":0, "graduacion": "5", "disponible": true},
-        { "id": "5", "estilo": "IPA", "IBU":0  , "graduacion": "5", "disponible": true},
-        { "id": "6", "estilo": "DIPA", "IBU":0  , "graduacion": "5", "disponible": true},
-        { "id": "7", "estilo": "NEIPA", "IBU":0  , "graduacion": "5", "disponible": true}
-        ],
-
-        "ventas":[
-            {
-                "productos":["1","3","5"],
-                "userId": "abc123"
-            },
-            {
-                "productos":["1","2","5"],
-                "userId": "abc1232"
-            },
-            {
-                "productos":["2","3","4"],
-                "userId": "abc1233"
-            }
-        ],
-
-        "users":[
-            {"id": "abc123", "name":"Facu"},
-            {"id": "abc1232", "name":"Facu1"},
-            {"id": "abc1233", "name":"Facu2"}
-        ]
+  "productos": [
+    {
+      "id": "1",
+      "estilo": "Rubia",
+      "IBU": 0,
+      "graduacion": "5",
+      "disponible": true
+    },
+    {
+      "id": "2",
+      "estilo": "Roja",
+      "IBU": 0,
+      "graduacion": "5",
+      "disponible": true
+    },
+    {
+      "id": "3",
+      "estilo": "Negra",
+      "IBU": 0,
+      "graduacion": "5",
+      "disponible": true
+    },
+    {
+      "id": "5",
+      "estilo": "IPA",
+      "IBU": 0,
+      "graduacion": "5",
+      "disponible": true
+    },
+    {
+      "id": "6",
+      "estilo": "DIPA",
+      "IBU": 0,
+      "graduacion": "5",
+      "disponible": true
+    },
+    {
+      "id": "7",
+      "estilo": "NEIPA",
+      "IBU": 0,
+      "graduacion": "5",
+      "disponible": true
+    }
+  ],
+  "pedido": [
+    {
+      "nombre": "FAcu",
+      "direccion": "132",
+      "location": "",
+      "id": 1
+    },
+    {
+      "id": 2131985,
+      "nombre": "FAcu",
+      "direccion": "132",
+      "location": ""
+    },
+    {
+      "id": 4857160,
+      "nombre": "FAcu",
+      "direccion": "132",
+      "location": ""
+    },
+    {
+      "id": 3528279,
+      "nombre": "FAcu",
+      "direccion": "132",
+      "location": ""
+    },
+    {
+      "nombre": "Segundo",
+      "direccion": "pedido 2",
+      "location": "asd",
+      "id": 4857161
+    },
+    {
+      "nombre": "Tercero",
+      "direccion": "ortro 3",
+      "location": "asdas",
+      "id": 4857162
+    },
+    {
+      "nombre": "",
+      "direccion": "",
+      "location": "",
+      "id": 4857163
+    },
+    {
+      "nombre": "sdas",
+      "direccion": "asdasd",
+      "location": "asda",
+      "id": 4857164
+    },
+    {
+      "nombre": "",
+      "direccion": "",
+      "location": "",
+      "id": 4857165
+    },
+    {
+      "nombre": "asdasd",
+      "direccion": "asdas",
+      "location": "asdas",
+      "id": 4857166
+    }
+  ],
+  "ventas": [
+    {
+      "productos": [
+        "1",
+        "3",
+        "5"
+      ],
+      "userId": "abc123"
+    },
+    {
+      "productos": [
+        "1",
+        "2",
+        "5"
+      ],
+      "userId": "abc1232"
+    },
+    {
+      "productos": [
+        "2",
+        "3",
+        "4"
+      ],
+      "userId": "abc1233"
+    }
+  ],
+  "users": [
+    {
+      "id": "abc123",
+      "name": "Facu"
+    },
+    {
+      "id": "abc1232",
+      "name": "Facu1"
+    },
+    {
+      "id": "abc1233",
+      "name": "Facu2"
+    }
+  ]
 }

@@ -9,7 +9,7 @@
         <label>Direccion</label>
         <input type="text" placeholder="Direccion de entrega" />
       </div>
-      <input type="submit" class="button -fill-gradient" value="Submit" />
+      <input type="submit" class="btnSubmit" value="Submit" />
     </form>
   </div>
 </template>

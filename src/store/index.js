@@ -16,12 +16,15 @@ export default new Vuex.Store({
     },
     ADD_PEDIDO(state, pedido) {
       state.pedidos = pedido;
+    },
+    SET_PEDIDOS(state, pedidos) {
+      state.pedidos = pedidos;
     }
   },
   actions: {
-    crearPedido({ commit }, pedido) {
-      return LocalServices.postPedido(pedido).then(() => {
-        commit("ADD_PEDIDO", pedido);
+    cargarPedido({ commit }, pedidos) {
+      return LocalServices.postPedido(pedidos).then(() => {
+        commit("ADD_PEDIDO", pedidos);
       });
     },
     fetchProductos({ commit }) {
@@ -32,6 +35,20 @@ export default new Vuex.Store({
         .catch(error => {
           console.log("There was an error: ", error.response);
         });
+    },
+    fetchPedidos({ commit }) {
+      LocalServices.getPedidos()
+        .then(response => {
+          commit("SET_PEDIDOS", response.data);
+        })
+        .catch(error => {
+          console.log("There was an error: ", error.response);
+        });
+    }
+  },
+  getters: {
+    ProductosActivos: state => {
+      return state.productos.filter(producto => producto.disponible);
     }
   },
   modules: {}

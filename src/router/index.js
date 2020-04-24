@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-//import CrearPedidos from "../views/CrearPedidos.vue";
+import CrearPedido from "../views/CrearPedido.vue";
 
 Vue.use(VueRouter);
 
@@ -19,12 +19,12 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/Pedidos",
+    name: "Pedidos",
+    component: CrearPedido
   }
-  // {
-  //   path: "/",
-  //   name: "Pedidos",
-  //   component: VistaPedidos
-  // }
 ];
 
 const router = new VueRouter({
