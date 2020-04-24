@@ -19,7 +19,7 @@ export default {
   postPedido(pedido) {
     return apiClient.post("/pedido", pedido);
   },
-  getPedidos(){
+  getPedidos() {
     return apiClient.get("/pedido");
   }
 };
