@@ -103,6 +103,86 @@
       "direccion": "asdas",
       "location": "asdas",
       "id": 4857166
+    },
+    {
+      "nombre": "zxcz",
+      "direccion": "zxczcx",
+      "location": "",
+      "id": 4857167
+    },
+    {
+      "nombre": "asdasd",
+      "direccion": "",
+      "location": "asdasd",
+      "id": 4857168
+    },
+    {
+      "nombre": "asdas",
+      "direccion": "asdas",
+      "location": "",
+      "id": 4857169
+    },
+    {
+      "nombre": "asda",
+      "direccion": "asda",
+      "location": "",
+      "id": 4857170
+    },
+    {
+      "nombre": "sasd",
+      "direccion": "asdassssssssss",
+      "location": "asd",
+      "id": 4857171
+    },
+    {
+      "nombre": "sd",
+      "direccion": "asda",
+      "productosCargados": [],
+      "id": 4857172
+    },
+    {
+      "nombre": "FAcundo",
+      "direccion": "Barbera",
+      "productosCargados": [
+        "6",
+        "6",
+        "6",
+        "6",
+        "5",
+        "5"
+      ],
+      "id": 4857173
+    },
+    {
+      "nombre": "FAcu",
+      "direccion": "27 83 84",
+      "productosCargados": [
+        "6",
+        "6",
+        "3",
+        "2"
+      ],
+      "id": 4857174
+    },
+    {
+      "nombre": "sdasdas",
+      "direccion": "asdasdas",
+      "productosCargados": [
+        "3",
+        "3"
+      ],
+      "id": 4857175
+    },
+    {
+      "nombre": "asdasda",
+      "direccion": "asdasda",
+      "productosCargados": [
+        "3",
+        "3",
+        "5",
+        "5"
+      ],
+      "id": 4857176
     }
   ],
   "ventas": [

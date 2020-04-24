@@ -2,10 +2,11 @@
 <template>
   <div class="home">
     <img alt="Rambull logo" src="../../public/img/Birras.jpg" />
-    <HelloWorld msg="Rambull Hard Brewing" />
+    <h1>Rambull Hard Brewing</h1>
     <ProducList @add-to-cart="updateCart" @remove-from-cart="removeFromCart" />
     <template v-if="ProductoSeleccionado.length > 0">
-      <router-link to="/Pedidos" @click="setPedidos"
+      <router-link
+        :to="{name: 'Pedidos', params: { productos: ProductoSeleccionado } }"
         >Hacer Pedido {{ ProductoSeleccionado.length }}</router-link
       >
     </template>
@@ -14,7 +15,7 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+
 import ProducList from "@/components/Producto.vue";
 // import { mapState } from "vuex";
 
@@ -42,7 +43,6 @@ export default {
     }
   },
   components: {
-    HelloWorld,
     ProducList
   }
 };

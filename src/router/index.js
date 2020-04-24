@@ -23,7 +23,8 @@ const routes = [
   {
     path: "/Pedidos",
     name: "Pedidos",
-    component: CrearPedido
+    props: { productos: [] }, //true,
+    component: CrearPedido //require('@/components/Pedidos')
   }
 ];
 
