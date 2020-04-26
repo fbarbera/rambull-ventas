@@ -33,7 +33,7 @@
       "estilo": "DIPA",
       "IBU": 0,
       "graduacion": "5",
-      "disponible": true
+      "disponible": false
     },
     {
       "id": "7",
@@ -41,6 +41,13 @@
       "IBU": 0,
       "graduacion": "5",
       "disponible": true
+    },
+    {
+      "id": "K47qZwc",
+      "estilo": "Slash",
+      "ibu": "60",
+      "graduacion": "40",
+      "imagen": ""
     }
   ],
   "pedido": [
@@ -54,6 +61,26 @@
         "5"
       ],
       "id": 1
+    },
+    {
+      "nombre": "Facundo",
+      "direccion": "27 entre 83 y 84",
+      "fecha": 1587832498524,
+      "productosCargados": [
+        "6",
+        "6",
+        "6"
+      ],
+      "id": 2
+    },
+    {
+      "nombre": "FAcu",
+      "direccion": "132",
+      "fecha": 1587854453462,
+      "productosCargados": [
+        "K47qZwc"
+      ],
+      "id": 3
     }
   ],
   "users": [

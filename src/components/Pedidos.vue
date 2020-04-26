@@ -55,6 +55,7 @@ export default {
       pedido: {
         nombre: "",
         direccion: "",
+        fecha: Date.now(),
         productosCargados: this.productos
       }
     };
@@ -125,5 +126,8 @@ export default {
   padding: 16px 31px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
+}
+.field {
+  margin-bottom: 24px;
 }
 </style>

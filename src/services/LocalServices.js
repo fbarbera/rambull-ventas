@@ -16,10 +16,13 @@ export default {
   getProducto(id) {
     return apiClient.get("/productos/" + id);
   },
+  postProducto(producto) {
+    return apiClient.post("/productos", producto);
+  },
   postPedido(pedido) {
     return apiClient.post("/pedido", pedido);
   },
-  getPedidos(){
+  getPedidos() {
     return apiClient.get("/pedido");
   }
 };

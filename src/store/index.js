@@ -14,6 +14,9 @@ export default new Vuex.Store({
     SET_PRODUCTOS(state, productos) {
       state.productos = productos;
     },
+    ADD_PRODUCTO(state, producto) {
+      state.productos = producto;
+    },
     ADD_PEDIDO(state, pedido) {
       state.pedidos = pedido;
     },
@@ -25,6 +28,11 @@ export default new Vuex.Store({
     cargarPedido({ commit }, pedidos) {
       return LocalServices.postPedido(pedidos).then(() => {
         commit("ADD_PEDIDO", pedidos);
+      });
+    },
+    cargarProducto({ commit }, producto) {
+      return LocalServices.postProducto(producto).then(() => {
+        commit("ADD_PRODUCTO", producto);
       });
     },
     fetchProductos({ commit }) {
@@ -48,7 +56,7 @@ export default new Vuex.Store({
   },
   getters: {
     ProductosActivos: state => {
-      return state.productos.filter(producto => producto.disponible);
+      return state.productos.filter(producto => (producto.disponible = true));
     }
   },
   modules: {}
