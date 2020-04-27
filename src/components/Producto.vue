@@ -19,8 +19,14 @@ import { mapState } from "vuex";
 export default {
   created() {
     this.$store.dispatch("fetchProductos");
+    //this.productos=ProductosActivos();
   },
-  computed: mapState(["productos"]),
+  computed: {
+    ProductosActivos() {
+      return this.$store.getters.ProductosActivos;
+    },
+    ...mapState(["productos"])
+  },
   methods: {
     updateCart(id) {
       this.$emit("add-to-cart", id);

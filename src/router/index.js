@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import CrearPedido from "../views/CrearPedido.vue";
+import CrearProducto from "../views/CrearProducto.vue";
+import ListaPedidos from "../views/ListaPedidos.vue";
 
 Vue.use(VueRouter);
 
@@ -25,6 +27,16 @@ const routes = [
     name: "Pedidos",
     props: { productos: [] }, //true,
     component: CrearPedido //require('@/components/Pedidos')
+  },
+  {
+    path: "/CrearProducto",
+    name: "CrearProducto",
+    component: CrearProducto
+  },
+  {
+    path: "/ListaPedidos",
+    name: "ListaPedidos",
+    component: ListaPedidos
   }
 ];
 
