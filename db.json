@@ -50,7 +50,7 @@
       "imagen": ""
     }
   ],
-  "pedido": [
+  "pedidos": [
     {
       "nombre": "Facu",
       "direccion": "27",
@@ -81,6 +81,33 @@
         "K47qZwc"
       ],
       "id": 3
+    },
+    {
+      "nombre": "Facu Fecha",
+      "direccion": "132",
+      "fecha": "'04/27/2020'",
+      "entregado": false,
+      "productosCargados": [
+        "6",
+        "6",
+        "7",
+        "7",
+        "2",
+        "2"
+      ],
+      "id": 4
+    },
+    {
+      "nombre": "Facu 2 Fecha",
+      "direccion": "27",
+      "fecha": "'04/27/2020'",
+      "entregado": false,
+      "productosCargados": [
+        "6",
+        "6",
+        "5"
+      ],
+      "id": 5
     }
   ],
   "users": [

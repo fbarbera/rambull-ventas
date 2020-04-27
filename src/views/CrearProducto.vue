@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link to="/ListaPedidos">Pedidos</router-link>
     <CrearProducto />
   </div>
 </template>

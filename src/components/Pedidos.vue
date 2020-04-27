@@ -41,8 +41,9 @@
 
 <script>
 //import { mapState } from "vuex";
-
+const moment = require('moment');
 export default {
+
   props: {
     productos: {
       type: Array,
@@ -55,7 +56,10 @@ export default {
       pedido: {
         nombre: "",
         direccion: "",
-        fecha: Date.now(),
+        fecha: moment(new Date())
+          .local()
+          .format("'L'"),
+        entregado: false,
         productosCargados: this.productos
       }
     };

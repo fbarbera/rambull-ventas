@@ -57,6 +57,9 @@ export default new Vuex.Store({
   getters: {
     ProductosActivos: state => {
       return state.productos.filter(producto => (producto.disponible = true));
+    },
+    PedidosPorFecha: state => fecha => {
+      return state.pedidos.filter(pedido => pedido.fecha === fecha)
     }
   },
   modules: {}

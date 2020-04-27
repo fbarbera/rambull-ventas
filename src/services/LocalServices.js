@@ -20,9 +20,9 @@ export default {
     return apiClient.post("/productos", producto);
   },
   postPedido(pedido) {
-    return apiClient.post("/pedido", pedido);
+    return apiClient.post("/pedidos", pedido);
   },
   getPedidos() {
-    return apiClient.get("/pedido");
+    return apiClient.get("/pedidos");
   }
 };
