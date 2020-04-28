@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       producto: {
-        id: "",
+        id: 0,
         estilo: "",
         ibu: "",
         graduacion: "",

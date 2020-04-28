@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import CrearPedido from "../views/CrearPedido.vue";
 import CrearProducto from "../views/CrearProducto.vue";
 import ListaPedidos from "../views/ListaPedidos.vue";
+import PedidoDetalle from "../views/PedidoDetalle.vue";
 
 Vue.use(VueRouter);
 
@@ -36,7 +37,14 @@ const routes = [
   {
     path: "/ListaPedidos",
     name: "ListaPedidos",
-    component: ListaPedidos
+    component: ListaPedidos,
+    props: true
+  },
+  {
+    path: "/PedidoDetalle",
+    name: "PedidoDetalle",
+    component: PedidoDetalle,
+    props: true
   }
 ];
 

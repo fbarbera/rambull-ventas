@@ -1,19 +1,19 @@
 <template>
   <div>
-    <div class="event-card">
-      <span>{{ pedido.fecha || formatDate }} </span>
-      <h4 class="title">{{ pedido.nombre }}</h4>
-      <h4 class="title">{{ pedido.direccion }}</h4>
-      <h4 class="title">
-        Cervezas pedidas: {{ pedido.productosCargados.length }}
-      </h4>
-    </div>
+    <router-link :to="{ name: 'PedidoDetalle', params: { id: pedido.id } }">
+      <div class="event-card">
+        <span>{{ pedido.fecha || formatDate }} </span>
+        <h4 class="title">{{ pedido.nombre }}</h4>
+        <h4 class="title">{{ pedido.direccion }}</h4>
+        <h4 class="title">
+          Cervezas pedidas: {{ pedido.productosCargados.length }}
+        </h4>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
-
-
 export default {
   props: {
     pedido: {

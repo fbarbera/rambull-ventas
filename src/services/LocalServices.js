@@ -24,5 +24,8 @@ export default {
   },
   getPedidos() {
     return apiClient.get("/pedidos");
+  },
+  getPedido(id) {
+    return apiClient.get("/pedidos/" + id);
   }
 };

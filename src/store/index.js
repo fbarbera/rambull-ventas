@@ -9,9 +9,13 @@ export default new Vuex.Store({
     productos: [],
     pedidos: [],
     usuarios: []
+    //pedido: Object
   },
   mutations: {
     SET_PRODUCTOS(state, productos) {
+      state.productos = productos;
+    },
+    SET_PRODUCTO(state, productos) {
       state.productos = productos;
     },
     ADD_PRODUCTO(state, producto) {
@@ -22,6 +26,9 @@ export default new Vuex.Store({
     },
     SET_PEDIDOS(state, pedidos) {
       state.pedidos = pedidos;
+    },
+    SET_PEDIDO(state, pedido) {
+      state.pedidos = pedido;
     }
   },
   actions: {
@@ -41,7 +48,22 @@ export default new Vuex.Store({
           commit("SET_PRODUCTOS", response.data);
         })
         .catch(error => {
-          console.log("There was an error: ", error.response);
+          console.log(
+            "Hubo un error al obtener lista de productos: ",
+            error.response
+          );
+        });
+    },
+    fetchProducto({ commit }, id) {
+      LocalServices.getProducto(id)
+        .then(response => {
+          commit("SET_PRODUCTO", response.data);
+        })
+        .catch(error => {
+          console.log(
+            "Hubo un error al obtener  el prodcuto " + id + ": ",
+            error.response
+          );
         });
     },
     fetchPedidos({ commit }) {
@@ -50,8 +72,28 @@ export default new Vuex.Store({
           commit("SET_PEDIDOS", response.data);
         })
         .catch(error => {
-          console.log("There was an error: ", error.response);
+          console.log(
+            "Hubo un error al obtener lista de pedidos: ",
+            error.response
+          );
         });
+    },
+    fetchPedidoId({ commit, getters }, id) {
+      var pedido = getters.getPedidoById(id);
+      if (pedido) {
+        commit("SET_PEDIDO", pedido);
+      } else {
+        LocalServices.getPedido(id)
+          .then(response => {
+            commit("SET_PEDIDO", response.data);
+          })
+          .catch(error => {
+            console.log(
+              "Hubo un error al obtener el pedido " + id + ": ",
+              error.response
+            );
+          });
+      }
     }
   },
   getters: {
@@ -59,7 +101,10 @@ export default new Vuex.Store({
       return state.productos.filter(producto => (producto.disponible = true));
     },
     PedidosPorFecha: state => fecha => {
-      return state.pedidos.filter(pedido => pedido.fecha === fecha)
+      return state.pedidos.filter(pedido => pedido.fecha === fecha);
+    },
+    getPedidoById: state => id => {
+      return state.pedidos.filter(pedido => pedido.id === id);
     }
   },
   modules: {}
