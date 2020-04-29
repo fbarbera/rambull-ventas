@@ -14,13 +14,15 @@
         pedido.productosCargados ? pedido.productosCargados.length : 0
       }}</span> -->
     </h2>
+
     <ul class="list-group">
       <li
-        v-for="(prod, index) in ObtenerProductos()"
+        v-for="(prod, index) in ObtenerProductos"
         :key="index"
         class="list-item"
       >
-        <b>{{ prod }}</b>
+        <b>{{ prod.id }}</b> |
+        <b>{{ prod.estilo }}</b>
       </li>
     </ul>
   </div>
@@ -32,26 +34,29 @@ export default {
   props: ["id"],
   data() {
     return {
-      pedido: {},
       idPedido: this.id,
       idProducto: 0,
       productosObtenidos: []
       //ejecutar: this.ObtenerProductos()
     };
   },
-  methods: {
-    ObtenerProductos() {
-      // console.log( this.$store.dispatch("fetchProducto", productoId));
-      //  return this.$store.dispatch("fetchProducto", productoId);
-    }
-  },
+  methods: {},
   created() {
-    this.$store.dispatch("fetchPedidoId", this.idPedido);
+    //console.log(this.prod);
     this.$store.dispatch("fetchProductos");
+    this.$store.dispatch("fetchPedidoId", this.idPedido);
   },
   computed: mapState({
-    pedidos: state => state.pedidos[0],
-    producto: state => state.productos
+    pedidos: state => state.pedidos,
+    productos: state => state.productos,
+    ObtenerProductos() {
+      var ProductosPedidos;
+      const ProductosPedidos = this.pedidos.productosCargados;
+      console.log(ids);
+      return this.productos.array.forEach(x => {
+          x.
+      });
+    }
   })
 };
 </script>

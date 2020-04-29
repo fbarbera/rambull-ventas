@@ -15,8 +15,8 @@ export default new Vuex.Store({
     SET_PRODUCTOS(state, productos) {
       state.productos = productos;
     },
-    SET_PRODUCTO(state, productos) {
-      state.productos = productos;
+    SET_PRODUCTO(state, producto) {
+      state.productos = producto;
     },
     ADD_PRODUCTO(state, producto) {
       state.productos = producto;
@@ -54,17 +54,22 @@ export default new Vuex.Store({
           );
         });
     },
-    fetchProducto({ commit }, id) {
-      LocalServices.getProducto(id)
-        .then(response => {
-          commit("SET_PRODUCTO", response.data);
-        })
-        .catch(error => {
-          console.log(
-            "Hubo un error al obtener  el prodcuto " + id + ": ",
-            error.response
-          );
-        });
+    fetchProductoId({ commit, getters }, id) {
+      var producto = getters.gerProductoById(id);
+      if (producto.length > 0) {
+        commit("SET_PRODUCTO", producto[0]);
+      } else {
+        LocalServices.getProductoById(id)
+          .then(response => {
+            commit("SET_PRODUCTO", response.data);
+          })
+          .catch(error => {
+            console.log(
+              "Hubo un error al obtener  el prodcuto " + id + ": ",
+              error.response
+            );
+          });
+      }
     },
     fetchPedidos({ commit }) {
       LocalServices.getPedidos()
@@ -80,8 +85,8 @@ export default new Vuex.Store({
     },
     fetchPedidoId({ commit, getters }, id) {
       var pedido = getters.getPedidoById(id);
-      if (pedido) {
-        commit("SET_PEDIDO", pedido);
+      if (pedido.length > 0) {
+        commit("SET_PEDIDO", pedido[0]);
       } else {
         LocalServices.getPedido(id)
           .then(response => {
@@ -98,13 +103,16 @@ export default new Vuex.Store({
   },
   getters: {
     ProductosActivos: state => {
-      return state.productos.filter(producto => (producto.disponible = true));
+      return state.productos.filter(producto => producto.disponible === true);
     },
     PedidosPorFecha: state => fecha => {
       return state.pedidos.filter(pedido => pedido.fecha === fecha);
     },
     getPedidoById: state => id => {
       return state.pedidos.filter(pedido => pedido.id === id);
+    },
+    gerProductoById: state => id => {
+      return state.productos.filter(prod => prod.id == id);
     }
   },
   modules: {}

@@ -13,7 +13,7 @@ export default {
   getProductos() {
     return apiClient.get("/productos");
   },
-  getProducto(id) {
+  getProductoById(id) {
     return apiClient.get("/productos/" + id);
   },
   postProducto(producto) {
