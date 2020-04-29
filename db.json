@@ -133,6 +133,17 @@
         "2"
       ],
       "id": 7
+    },
+    {
+      "nombre": "Pedidor",
+      "direccion": "Direccion",
+      "fecha": "04/29/2020",
+      "entregado": false,
+      "productosCargados": [
+        "7",
+        "K47qZwc"
+      ],
+      "id": 8
     }
   ],
   "users": [

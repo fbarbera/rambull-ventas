@@ -7,7 +7,7 @@
       <h5>Direccion de entrega: {{ pedidos.direccion }}</h5>
     </div>
     <h2>Detalle del pedido</h2>
-    <p>Hay {{ pedidos.productosCargados }} birras pedidas</p>
+    <p>Hay {{ pedidos.productosCargados.length }} birras pedidas</p>
     <h2>
       Productos
       <!-- <span class="badge -fill-gradient">{{
@@ -17,11 +17,10 @@
 
     <ul class="list-group">
       <li
-        v-for="(prod, index) in ObtenerProductos"
+        v-for="(prod, index) in productosObtenidos"
         :key="index"
         class="list-item"
       >
-        <b>{{ prod.id }}</b> |
         <b>{{ prod.estilo }}</b>
       </li>
     </ul>
@@ -37,7 +36,6 @@ export default {
       idPedido: this.id,
       idProducto: 0,
       productosObtenidos: []
-      //ejecutar: this.ObtenerProductos()
     };
   },
   methods: {},
@@ -46,18 +44,30 @@ export default {
     this.$store.dispatch("fetchProductos");
     this.$store.dispatch("fetchPedidoId", this.idPedido);
   },
-  computed: mapState({
-    pedidos: state => state.pedidos,
-    productos: state => state.productos,
+  computed: {
+    ...mapState({
+      pedidos: state => state.pedidos,
+      productos: state => state.productos
+    }),
     ObtenerProductos() {
-      var ProductosPedidos;
-      const ProductosPedidos = this.pedidos.productosCargados;
-      console.log(ids);
-      return this.productos.array.forEach(x => {
-          x.
+      //var ProductosPedidos;
+      //const ProductosPedidos = this.pedidos.productosCargados;
+      //console.log(ids);
+      this.pedidos.productosCargados.forEach(x => {
+        this.productosObtenidos.push(
+          this.productos.filter(prod => {
+            return prod.id == x;
+          })[0]
+        );
       });
+      console.log(
+        this.productos.filter(prod => {
+          return prod.id == 1;
+        })[0]
+      );
+      return this.productosObtenidos;
     }
-  })
+  }
 };
 </script>
 
